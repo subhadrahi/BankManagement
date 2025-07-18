@@ -1,0 +1,94 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background: #0056b3;
+        }
+        .login-container a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+     <div class="login-container">
+        <h2>Login</h2>
+        <%String success=(String)request.getAttribute("success");
+ if(success!=null){%>
+ <h2 class="success"><%=success%></h2>
+ <%}%>
+ <%String failure=(String)request.getAttribute("failure");
+ if(failure!=null){%>
+ <h2 class="failure"><%=failure%></h2>
+ <%}%>
+  <form action="Login" method="post">
+            <label for="accno">Account Number</label>
+            <input type="text" id="accno" name="accno" placeholder="Enter your account number" required>
+
+            <label for="pin">PIN</label>
+            <input type="password" id="pin" name="pin" placeholder="Enter your PIN" required>
+
+            <button type="submit">Login</button>
+      <a href="ResetPin.html">ResetPin?</a>       
+        </form>
+        <a href="Signup.html">Don't have an account? signup</a>
+    </div>
+</body>
+</html>      
+</body>
+</html>
+       

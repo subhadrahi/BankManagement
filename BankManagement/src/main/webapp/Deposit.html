@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Money</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+        .container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .error, .success {
+            text-align: center;
+            font-size: 14px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Deposit Money</h2>
+        <form action="Deposit" method="post">
+            <div class="form-group">
+                <label for="accno">Account Number</label>
+                <input type="text" id="accno" name="accno" placeholder="Enter your account number" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Deposit Amount</label>
+                <input type="number" id="amount" name="amount" placeholder="Enter amount to deposit" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Deposit">
+                 
+            <a href="dashboard.jsp" class="back-link">← Back to Home Page</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

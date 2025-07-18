@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Passbook</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+    }
+
+    .form-container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #ffffff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+    }
+
+    .form-container h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form-container label {
+        display: block;
+        margin: 10px 0 5px;
+    }
+
+    .form-container input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .form-container button {
+        width: 100%;
+        padding: 10px;
+        background: #28a745;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .form-container button:hover {
+        background: #218838;
+    }
+
+    .error-message {
+        color: red;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .transactions {
+        margin: 30px auto;
+        max-width: 800px;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .transactions table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .transactions th, .transactions td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .transactions th {
+        background: #007bff;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Passbook</h1>
+        <form action="passbook" method="post">
+        
+            <label for="accno">Account Number:</label>
+            <input type="number" id="accno" name="accno" required>
+            
+            <label for="pin">Pin:</label>
+            <input type="password" id="pin" name="pin" required>
+            
+            <button type="submit">View Passbook</button>
+            <a href="dashboard.jsp" class="back-link">← Back to Home Page</a>
+        </form>
+    </div>
+    
+  
+    <div class="transactions">
+        <h2>Transaction History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Account Number</th>
+                    <th>Type</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</body>
+</html>

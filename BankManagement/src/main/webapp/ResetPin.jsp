@@ -1,0 +1,118 @@
+<%@page import="com.Bank.DTO.Customer"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reset PIN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin: 0 0 20px;
+            text-align: center;
+            color: #333;
+}
+label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            background: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+ <div class="container">
+        <h2>Reset Your PIN</h2>
+ <%Customer c=(Customer)session.getAttribute("customer"); %>
+  <%String success=(String)request.getAttribute("success");
+ if(success!=null){%>
+ <h3 class="success"><%=success%></h3>
+ <%}%>
+ <%String failure=(String)request.getAttribute("failure");
+ if(failure!=null){%>
+ <h3 class="failure"><%=failure%></h3>
+ <%}%>
+<form action="ResetPin" method="post">
+ <table>
+ <tr>
+ <td><b>Enter the Phone number:</b></td>
+<td><input type="tel" name="phone"></td>
+ </tr>
+ <tr>
+ <td><br></td>
+ <td><br></td>
+ </tr>
+ <tr>
+ <td><b>Enter the Mail ID:</b></td>
+ <td><input type="email" name="mail"></td>
+ </tr>
+ <tr>
+ <td><br></td>
+ <td><br></td>
+ </tr>
+ <tr>
+ <td><b>Enter a new pin:</b></td>
+ <td><input type="password" name="password"></td>
+ </tr>
+ <tr>
+ <td><br></td>
+ <td><br></td>
+ </tr>
+ <tr>
+ <td><b>Confirm the pin:</b></td>
+ <td><input type="password" name="confirm"></td>
+ </tr>
+ <tr>
+ <td><br></td>
+ <td><br></td>
+ </tr>
+ <tr>
+ <td><input type="submit" value="Reset
+Pin"></td>
+ <td><a href="Login.html">Back</a></td>
+ </tr>
+ </table>
+ </form>
+</div>
+</body>
+</html>
+
+    
